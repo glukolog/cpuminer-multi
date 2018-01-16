@@ -47,7 +47,7 @@ case $MINGW_TARGET in
     have_arm=true
     ;;
   aarch64*-*-*)
-    have_arm=true
+    have_aarch64=true
     ;;
   i*86-*-mingw*)
     have_x86=true
@@ -134,6 +134,7 @@ AM_CONDITIONAL([USE_ASM], [test x$enable_assembly != xno])
 AM_CONDITIONAL([ARCH_x86], [test x$have_x86 = xtrue])
 AM_CONDITIONAL([ARCH_x86_64], [test x$have_x86_64 = xtrue])
 AM_CONDITIONAL([ARCH_ARM], [test x$have_arm = xtrue])
+AM_CONDITIONAL([ARCH_AARCH64], [test x$have_aarch64 = xtrue])
 AM_CONDITIONAL([MINGW], [test "x$OS" = "xWindows_NT"])
 
 if test x$request_jansson = xtrue ; then
